@@ -6,17 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <title>Concur - Expense Management, Travel and Invoice Software - SAP Concur</title>
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "proxima-nova", Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
         header {
             background-color: #000000;
             height: 78px;
             width: 100%;
 
             .login {
+                cursor: pointer;
                 font-size: 0.9em;
                 color: #008FD3;
                 border-color: #008FD3;
                 border: 1px solid;
                 padding: 1.2rem 1.6rem;
+                margin-top:8px;
                 line-height: 1;
                 display: inline-block;
                 border-radius: 1px;
@@ -76,7 +89,6 @@
                 color: white;
             }
 
-
             a:link,
             a:visited,
             a:hover,
@@ -87,13 +99,6 @@
 
         .button-bar button:hover {
             background-color: #149cdb;
-
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "proxima-nova", Arial, Helvetica, sans-serif;
         }
 
         a:hover {
@@ -113,7 +118,6 @@
             height: 36px;
             float: left;
         }
-
 
         #cookie-consent {
             width: 100%;
@@ -164,8 +168,6 @@
             >div:first-child {
                 width: 66.6%
             }
-
-
         }
 
         .float {
@@ -185,6 +187,7 @@
         }
 
         ul.nav-list {
+            cursor: pointer;
             border: none;
             text-decoration: none;
             padding: 0;
@@ -207,7 +210,6 @@
                 >ul.nav-list {
                     visibility: visible;
                 }
-
             }
 
             li {
@@ -245,7 +247,6 @@
                             top: 1px;
                             background: #333333;
                             transition: .5s;
-
                         }
 
                         >span {
@@ -260,7 +261,6 @@
                             padding: 0px 12px;
                             height: 40px;
                             line-height: 40px;
-
                         }
                     }
 
@@ -274,20 +274,15 @@
             .nav-list.visible {
                 visibility: visible;
             }
-
-            body {
-                box-sizing: border-box;
-            }
-
-
         }
 
         footer {
             text-align: center;
+
             div {
                 min-height: 120px;
                 padding: 30px 0;
-                width:100%;
+                width: 100%;
                 color: white;
                 background-color: #000000;
 
@@ -503,10 +498,6 @@
                 </ul>
             </li>
         </ul>
-
-
-        </ul>
-        </nav>
         <div class="login"><a href="./user-home.html">Login</a></div>
     </header>
     <div class="hero">
@@ -514,8 +505,8 @@
             <h2>Spend management — done in a snap</h2>
             <p>Nobody connects expense, travel, and invoice on one platform like us.</p>
             <div class="button-bar">
-                <button class="bar-button">Contact us</button>
-                <button class="transparent-black bar-button">Request pricing</button>
+                <button type="button" class="bar-button">Contact us</button>
+                <button type="button" class="transparent-black bar-button">Request pricing</button>
             </div>
         </div>
         <img src="./home-video.gif" alt="Hero image" />
@@ -533,7 +524,6 @@
                 <li>FAQ</li>
                 <li>VISIT SAP.COM</li>
             </ul>
-
             © Copyright 2024 Concur Technologies, Inc. Privacy Terms of Use Cookie Preferences
     </footer>
     <div id="cookie-consent">
@@ -553,5 +543,4 @@
         </div>
     </div>
 </body>
-
 </html>
