@@ -1,398 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <title>Concur - Expense Management, Travel and Invoice Software - SAP Concur</title>
-    <style>
-        header {
-            background-color: #3d3d3d;
-            height: 78px;
-            width: 100%;
-
-            .login {
-                font-size: 0.9em;
-                color: #008FD3;
-                border-color: #008FD3;
-                border: 1px solid;
-                padding: 1.2rem 1.6rem;
-                line-height: 1;
-                display: inline-block;
-                border-radius: 1px;
-                transition: all 200ms cubic-bezier(.42, 0, .58, 1);
-                text-decoration: none;
-                background: transparent;
-                text-transform: uppercase;
-
-                a:link,
-                a:visited,
-                a:hover,
-                a:active {
-                    color: inherit;
-                }
-            }
-
-            .login:hover {
-                background-color: #008FD3;
-                color: #fff;
-                outline: none;
-                box-shadow: none;
-                text-decoration: none;
-            }
-        }
-
-        .hero {
-            padding: 60px;
-            background-color: #D1EFFF;
-            text-align: center;
-
-            * {
-                text-align: initial;
-            }
-        }
-
-        .button-bar button {
-            color: #fff;
-            background-color: #008FD3;
-            border-color: #008FD3;
-            border: 1px solid;
-            padding: 1.3rem 1.8rem;
-            font-size: 0.9rem;
-            line-height: 1;
-            display: inline-block;
-            border-radius: 1px;
-            transition: all 200ms cubic-bezier(.42, 0, .58, 1);
-            text-decoration: none;
-            text-transform: uppercase;
-
-            &.transparent-black {
-                background-color: transparent;
-                color: #000;
-            }
-
-            &.transparent-black:hover {
-                background-color: black;
-                color: white;
-            }
-
-
-            a:link,
-            a:visited,
-            a:hover,
-            a:active {
-                color: inherit;
-            }
-        }
-
-        .button-bar button:hover {
-            background-color: #149cdb;
-
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: "proxima-nova", Arial, Helvetica, sans-serif;
-            background-color: #ececec;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .inline-block {
-            display: inline-block;
-        }
-
-        .logo {
-            background: url(./sap-concur.svg) no-repeat;
-            width: 165px;
-            position: relative;
-            top: 20px;
-            margin: 0px 20px 5px 20px;
-            height: 36px;
-            float: left;
-        }
-
-
-        #cookie-consent {
-            width: 100%;
-            position: fixed;
-            left: 0px;
-            bottom: 0px;
-            z-index: 100;
-            color: white;
-            background-color: #303233;
-            font-size: 13px;
-            padding: 32px;
-
-            &.minimized {
-                bottom: -2000px;
-                opacity: 0;
-                transition: bottom 2.8s, opacity 0.6s;
-            }
-
-            a {
-                color: #f0ab00;
-            }
-
-            button {
-                text-transform: none;
-                font-size: 15px;
-                height: 40px;
-                cursor: pointer;
-                margin-left: 5px;
-                margin-bottom: 15px;
-                overflow: visible;
-                padding-left: 30px;
-                padding-right: 30px;
-                background-color: #ffffff;
-                border: 0px none;
-                border-radius: 5px;
-                color: #1a1a1a;
-                display: inline-block;
-
-                &#consent-agree {
-                    background-color: #f0ab00;
-                }
-            }
-
-            .consent-buttons {
-                margin-bottom: 15px;
-            }
-
-            >div:first-child {
-                width: 66.6%
-            }
-
-
-        }
-
-        .float {
-            &.left {
-                float: left;
-            }
-
-            &.right {
-                float: right;
-            }
-        }
-
-        .nav-top-level {
-            text-transform: uppercase;
-            color: #ffffff;
-            font-size: 1.5rem;
-        }
-
-        ul.nav-list {
-            border: none;
-            text-decoration: none;
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            text-align: left;
-
-            .subnav-header {
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+        <title>Concur - Expense Management, Travel and Invoice Software - SAP Concur</title>
+        <style>
+            header {
+                background-color: #3d3d3d;
+                height: 78px;
                 width: 100%;
+
+                .profile {
+                    font-size: 0.9em;
+                    color: #008FD3;
+                    border-color: #008FD3;
+                    border: 1px solid;
+                    padding: 1.2rem 1.6rem;
+                    line-height: 1;
+                    display: inline-block;
+                    border-radius: 1px;
+                    transition: all 200ms cubic-bezier(.42, 0, .58, 1);
+                    text-decoration: none;
+                    background: transparent;
+                    text-transform: uppercase;
+
+                    &:hover {
+                       background-color: #008FD3;
+                       color: #fff;
+                       outline: none;
+                       box-shadow: none;
+                       text-decoration: none;
+                    }
+
+                    a:link,
+                    a:visited,
+                    a:hover,
+                    a:active {
+                        color: inherit;
+                    }
+                }
+
+            }
+
+            .hero {
+                padding: 60px;
+                background-color: #D1EFFF;
+                text-align: center;
+
+                * {
+                    text-align: initial;
+                }
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: "proxima-nova", Arial, Helvetica, sans-serif;
+                background-color: #ececec;
+            }
+
+            .inline-block {
                 display: inline-block;
-                padding: 0px 12px;
-                font-size: 1.4rem;
-                color: white;
-
             }
 
-            li:hover {
-                border-bottom: 4px solid orange;
-
-                >ul.nav-list {
-                    visibility: visible;
-                }
-
-            }
-
-            li {
-                padding-right: 25px;
-                list-style-type: none;
-                list-style-image: none;
-                padding: 0 30px 0 10px;
-                height: 75px;
-                line-height: 75px;
-
-                a {
-                    color: white;
-                }
-            }
-
-            >li {
+            .logo {
+                background: url(./app-logo.png) no-repeat;
+                background-size: contain;
+                width: 165px;
+                position: relative;
+                top: 20px;
+                margin: 0px 70px 5px 20px;
+                height: 36px;
                 float: left;
-                width: 235px;
+            }
 
-                >ul.nav-list {
-                    visibility: hidden;
-                    position: absolute;
-                    background: black;
+            .float {
+                &.left { float: left; }
+                &.right{ float: right; }
+            }
+
+            .nav-top-level {
+                text-transform: uppercase;
+                color: #ffffff;
+                font-size: 1.5rem;
+
+                &:link,
+                &:visited,
+                &:hover,
+                &:active {
+                    text-decoration: none;
+                }
+            }
+
+            ul.nav-list {
+                border: none;
+                padding: 0;
+                margin: 0;
+                list-style: none;
+
+                li {
+                    padding-right: 25px;
+                    list-style-type: none;
+                    list-style-image: none;
+                    padding: 0 30px 0 10px;
+                    height: 75px;
+                    line-height: 75px;
+                    float: left;
                     width: 235px;
-                    transform: translate(-10px, -1px);
 
-                    >li {
-                        padding: 0px;
-                        height: 40px;
-                        line-height: 40px;
-
-                        >ul.nav-list {
-                            left: 245px;
-                            min-height: 100%;
-                            top: 1px;
-                            background: #333333;
-                            transition: .5s;
-
-                        }
-
-                        >span {
-                            width: 100%;
-                            display: inline-block;
-                            padding: 0px 12px;
-                        }
-
-                        a {
-                            width: 100%;
-                            display: inline-block;
-                            padding: 0px 12px;
-                            height: 40px;
-                            line-height: 40px;
-
-                        }
-                    }
-
-                    li:hover {
-                        border-bottom: none;
-                        background: #555;
+                    a {
+                        color: white;
                     }
                 }
             }
 
-            .nav-list.visible {
-                visibility: visible;
+            body {
+                overflow: hidden;
             }
 
-
-
-        }
-        body {
-            overflow:hidden;
-        }
-
-        footer {
-            text-align: center;
-            div {
-                min-height: 80px;
-                width:100%;
-                padding: 12px 0;
-                color: white;
-                background-color: #464646;
-                position:fixed;
-                bottom: 0;
+            footer {
+                text-align: center;
+                div {
+                    min-height: 80px;
+                    width:100%;
+                    padding: 12px 0;
+                    color: white;
+                    background-color: #464646;
+                    position:fixed;
+                    bottom: 0;
+                }
             }
-        }
 
-        .aside {
-            padding: 20px;
-            margin-right: 10px;
-        }
-
-        table {
-            td {
-                padding: 5px;
-            }
-        }
-
-        .double-block {
-            div {
-                display: inline-block;
+            .aside {
                 padding: 20px;
-                border: 1px solid black;   
-                background-color: white;
                 margin-right: 10px;
             }
-        }
-    </style>
-</head>
 
-<body>
-    <header>
-        <div class="logo"></div>
-        <ul class="nav-list">
-            <li class="first expanded"><a class="nav-top-level" href ="#">Travel</a></li>
-            <li class="first expanded"><a class="nav-top-level" href ="#">Expense</a></li>
-            <li class="first expanded"><a class="nav-top-level" href ="#">Reporting</a></li>
-        </ul>
+            table {
+                td {
+                    padding: 5px;
+                }
+            }
 
-
-        </ul>
-        </nav>
-        <div class="login"><a href="#">Profile</a></div>
-    </header>
-    <div class="float left aside" style="width: 33%">
-        <h2>MY TRIPS (2)</h2>
-        <table>
-            <tr>
-                <td>02/04</td>
-                <td><a href="">Regional Meeting</a></td>
-                <td>Approved</td>
-            </tr>
-            <tr>
-                <td>04/10</td>
-                <td><a href="">Accreditation Hearing</a></td>
-                <td>Pending Approval</td>
-            </tr>
-        </table>
-    </div>
-    <div class="double-block" style="height:100%">
-        <h1>My Tasks</h1>
-        <div class="float left">
-            <h3><span>00</span> Available Expenses</h3>
-            <p> You currently have no available expenses.</p>
-        </div>
-        
-        <div>
-            <h3><span>05</span> Open Reports</h3>
+            .double-block {
+                div {
+                    display: inline-block;
+                    padding: 20px;
+                    border: 1px solid black;   
+                    background-color: white;
+                    margin-right: 10px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo"></div>
+            <ul class="nav-list">
+                <li class="first expanded"><a class="nav-top-level" href ="#">Travel</a></li>
+                <li class="first expanded"><a class="nav-top-level" href ="#">Expense</a></li>
+                <li class="first expanded"><a class="nav-top-level" href ="#">Reporting</a></li>
+            </ul>
+            <div class="profile"><a href="#">Profile</a></div>
+        </header>
+        <div class="float left aside" style="width: 33%">
+            <h2>MY TRIPS (2)</h2>
             <table>
                 <tr>
-                    <td>02/02</td>
-                    <td><a href="">January 2023 Expenses</td>
-                    <td>$21,329</td>
+                    <td>02/04</td>
+                    <td><a href="">Regional Meeting</a></td>
+                    <td>Approved</td>
                 </tr>
                 <tr>
-                    <td>01/06</td>
-                    <td><a href="">EoY Report Fees</td>
-                    <td>$277</td>
-                </tr>
-                <tr>
-                    <td>01/02</td>
-                    <td><a href="">December 2022 Expenses</td>
-                    <td>$46,005</td>
-                </tr>
-                <tr>
-                    <td>12/19</td>
-                    <td><a href="">Holiday Performance Bonuses</a></td>
-                    <td>$3,717</td>
-                </tr>
-                <tr>
-                    <td>12/02</td>
-                    <td><a href="">November 2022 Expenses</td>
-                    <td>$1,852</td>
+                    <td>04/10</td>
+                    <td><a href="">Accreditation Hearing</a></td>
+                    <td>Pending Approval</td>
                 </tr>
             </table>
         </div>
-    </div>
-    <footer>
-        <div class="footer">
-       <p>last signed in: <script>document.write(new Date(Date.now() - 1200000))</script></p>
-
-            © Copyright 2024 Concur Technologies, Inc.
+        <div class="double-block" style="height:100%">
+            <h1>My Tasks</h1>
+            <div class="float left">
+                <h3><span>00</span> Available Expenses</h3>
+                <p> You currently have no available expenses.</p>
+            </div>
+            <div>
+                <h3><span>05</span> Open Reports</h3>
+                <table>
+                    <tr>
+                        <td>02/02</td>
+                        <td><a href="">January 2023 Expenses</td>
+                        <td>$21,329</td>
+                    </tr>
+                    <tr>
+                        <td>01/06</td>
+                        <td><a href="">EoY Report Fees</td>
+                        <td>$277</td>
+                    </tr>
+                    <tr>
+                        <td>01/02</td>
+                        <td><a href="">December 2022 Expenses</td>
+                        <td>$46,005</td>
+                    </tr>
+                    <tr>
+                        <td>12/19</td>
+                        <td><a href="">Holiday Performance Bonuses</a></td>
+                        <td>$3,717</td>
+                    </tr>
+                    <tr>
+                        <td>12/02</td>
+                        <td><a href="">November 2022 Expenses</td>
+                        <td>$1,852</td>
+                    </tr>
+                </table>
+            </div>
         </div>
-    </footer>
-</body>
+        <footer>
+            <div class="footer">
+           <p>last signed in: <script>document.write(new Date(Date.now() - 1200000))</script></p>
 
+                © Copyright 2024 Concur Technologies, Inc.
+            </div>
+        </footer>
+    </body>
 </html>
